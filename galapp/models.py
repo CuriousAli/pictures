@@ -3,10 +3,7 @@ from django.db import models
 
 class Picture(models.Model):
     name = models.CharField(max_length=50, blank=True, unique=True)
-    image = models.ImageField(upload_to="images/")
-    width = models.SmallIntegerField()
-    height = models.SmallIntegerField()
-    location = models.FilePathField()
+    image = models.ImageField(upload_to="media/")
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True)
 
